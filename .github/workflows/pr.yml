@@ -1,0 +1,13 @@
+name: Auto Assign PR Author
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  assign-author-of-pr:
+    uses: ./.github/workflows/auto-assign-pr.yaml
+    secrets: inherit
