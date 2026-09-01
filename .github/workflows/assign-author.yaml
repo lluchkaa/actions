@@ -1,15 +1,18 @@
-name: Auto Assign PR Author
+name: Assign Author
 
 on:
   workflow_call:
   pull_request:
     types: [opened, reopened]
+  issues:
+    types: [opened, reopened]
 
 permissions:
+  issues: write
   pull-requests: write
 
 jobs:
-  assign-author-of-pr:
+  assign-author:
     runs-on: ubuntu-latest
     steps:
-      - uses: lluchkaa/actions/auto-assign-pr@main
+      - uses: lluchkaa/actions/assign-author@main
