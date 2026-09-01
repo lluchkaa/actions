@@ -2,8 +2,6 @@
 
 Assigns a pull request to its author when it is opened, unless the author is a bot or the PR already has an assignee. Available as a composite action or a callable workflow wrapping it.
 
-Pin with `auto-assign-pr-v1`, `auto-assign-pr-v1.0`, or `auto-assign-pr-v1.0.0`.
-
 ## Usage
 
 ### Composite action
@@ -22,7 +20,7 @@ jobs:
   assign-author:
     runs-on: ubuntu-latest
     steps:
-      - uses: lluchkaa/actions/auto-assign-pr@auto-assign-pr-v1
+      - uses: lluchkaa/actions/auto-assign-pr@main
 ```
 
 ### Callable workflow
@@ -39,7 +37,7 @@ permissions:
 
 jobs:
   assign-author:
-    uses: lluchkaa/actions/.github/workflows/auto-assign-pr.yaml@auto-assign-pr-v1
+    uses: lluchkaa/actions/.github/workflows/auto-assign-pr.yaml@main
     secrets: inherit
 ```
 
