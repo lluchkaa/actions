@@ -2,6 +2,8 @@ name: Auto Assign PR Author
 
 on:
   workflow_call:
+  pull_request:
+    types: [opened, reopened]
 
 permissions:
   pull-requests: write
