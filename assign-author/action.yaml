@@ -6,8 +6,8 @@ runs:
   steps:
     - name: Assign author
       if: |
-        (github.event.issue.user.type != 'Bot' && github.event.issue.assignees[0] == null) ||
-        (github.event.pull_request.user.type != 'Bot' && github.event.pull_request.assignees[0] == null)
+        (github.event.issue && github.event.issue.user.type != 'Bot' && github.event.issue.assignees[0] == null) ||
+        (github.event.pull_request && github.event.pull_request.user.type != 'Bot' && github.event.pull_request.assignees[0] == null)
       shell: bash
       env:
         GH_TOKEN: ${{ github.token }}
